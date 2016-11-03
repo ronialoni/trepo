@@ -8,3 +8,11 @@
     git: repo=https://github.com/spring-projects/spring-petclinic.git dest=/home/ec2-user/repo/petclinic
   - name: clone git trepo repo
     git: repo=https://github.com/ronialoni/trepo.git dest=/home/ec2-user/repo/trepo update=no
+  - name: docker fetch
+    yum: name=docker state=latest
+    become: yes
+    become_method: sudo
+  - name: add user to a group
+    user: name=ec2-user groups=docker append=yes
+    become: yes
+    become_method: sudo
