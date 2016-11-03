@@ -5,8 +5,6 @@
     become: yes
     become_method: sudo
   - name: clone git repo
-    git: repo=https://github.com/spring-projects/spring-petclinic.git dest=/home/ec2-user/repo
-    become: yes
-    become_method: sudo
+    git: repo=https://github.com/spring-projects/spring-petclinic.git dest=/home/ec2-user/repo/petclinic
   - name: clone git trepo repo
     git: repo=https://github.com/ronialoni/trepo.git dest=/home/ec2-user/repo/trepo
