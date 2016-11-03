@@ -4,7 +4,7 @@
     yum: name=git state=latest
     become: yes
     become_method: sudo
-  - name: clone git repo
+  - name: clone git petclinic repo
     git: repo=https://github.com/spring-projects/spring-petclinic.git dest=/home/ec2-user/repo/petclinic
   - name: clone git trepo repo
-    git: repo=https://github.com/ronialoni/trepo.git dest=/home/ec2-user/repo/trepo
+    git: repo=https://github.com/ronialoni/trepo.git dest=/home/ec2-user/repo/trepo update=no
