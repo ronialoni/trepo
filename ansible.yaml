@@ -16,3 +16,8 @@
     user: name=ec2-user groups=docker append=yes
     become: yes
     become_method: sudo
+  - name: start docker
+    service: name=docker state=started
+    become: yes
+    become_method: sudo
+
