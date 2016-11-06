@@ -20,4 +20,8 @@
     service: name=docker state=started
     become: yes
     become_method: sudo
+  - name: get maven
+    unarchive: copy=no creates=~/apache-maven-3.3.9 dest=~ src=http://apache.mivzakim.net/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+    become: yes
+    become_method: sudo
 
