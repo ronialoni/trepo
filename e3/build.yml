@@ -1,0 +1,6 @@
+- hosts: localhost
+  tasks:
+  - name: download and unzip maven
+    unarchive: copy=no src=http://apache.spd.co.il/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz dest=/home/ec2-user/e3 creates=/home/ec2-user/e3/apache-maven-3.3.9
+  - name: build docker image
+    docker_image: path=/home/ec2-user/e3 name=e3
